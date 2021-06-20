@@ -3,7 +3,7 @@ import DataTable from 'react-data-table-component';
 import styled from 'styled-components';
 
 import Heading from '../../components/elements/Heading';
-import Loading from '../../components/elements/Loading/indext';
+import Loading from '../../components/elements/Loading';
 import Form from '../../components/Form';
 import { columns } from './columns';
 
