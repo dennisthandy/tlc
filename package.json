@@ -37,5 +37,6 @@
     "vite-plugin-pwa": "^0.8.1"
   },
   "pre-commit": "lint",
-  "license": "MIT"
+  "license": "MIT",
+  "proxy": "http://pusatbahasa.trunojoyo.ac.id"
 }
