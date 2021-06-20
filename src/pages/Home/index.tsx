@@ -108,7 +108,7 @@ const Home: React.FC = (): React.ReactElement => {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>): Promise<void> => {
     e.preventDefault();
     setLoading(true);
-    let res: any = await fetch('/ss', {
+    let res: any = await fetch('http://pusatbahasa.trunojoyo.ac.id/ss', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded',
