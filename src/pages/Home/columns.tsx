@@ -10,7 +10,6 @@ interface ScoreProps {
 const Score = styled.span<ScoreProps>`
   padding: 0.15rem 0.75rem;
   font-weight: ${(props) => props.isPass && 600};
-  /* background-color: ${(props) => props.isPass && 'green'}; */
   color: ${(props) => props.isPass && 'green'};
 `;
 

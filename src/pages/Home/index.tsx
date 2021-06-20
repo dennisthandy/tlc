@@ -21,15 +21,15 @@ const HeadingWrapper = styled.div`
   display: grid;
 `;
 
-const Decoration = styled.img`
-  width: 18rem;
-  height: auto;
-  margin: 0 auto;
+// const Decoration = styled.img`
+//   width: 18rem;
+//   height: auto;
+//   margin: 0 auto;
 
-  @media screen and (min-width: ${(props) => props.theme.breakpoints.sm}) {
-    width: 20rem;
-  }
-`;
+//   @media screen and (min-width: ${(props) => props.theme.breakpoints.sm}) {
+//     width: 20rem;
+//   }
+// `;
 
 const Home: React.FC = (): React.ReactElement => {
   const [data, setData] = useState<null | []>(null);
@@ -84,12 +84,13 @@ const Home: React.FC = (): React.ReactElement => {
         />
       )}
 
-      {!loading && !data && !success && (
+      {/* {!loading && !data && !success && (
         <Decoration src="/ilustration.svg" alt="Decoration" />
-      )}
+      )} */}
+
       {success === 'no' && !data && (
         <>
-          <Decoration src="/bg-16.svg" alt="Library" />
+          {/* <Decoration src="/bg-16.svg" alt="Library" /> */}
           <Heading brown h4 center>
             Data tidak ditemukan...
           </Heading>
