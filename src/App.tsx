@@ -6,9 +6,9 @@ import styled from 'styled-components';
 import Container from './components/elements/Container';
 import Footer from './components/Footer';
 import Header from './components/Header';
-// import About from './pages/About';
-// import Home from './pages/Home';
 import logo from './logo.svg';
+// import About from './pages/About';
+import Home from './pages/Home';
 
 const Wrapper = styled.main`
   padding-bottom: 1rem;
@@ -28,6 +28,7 @@ function App() {
     <Wrapper>
       <Container>
         <Header />
+        {!openAbout && <Home />}
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <p className="header">
