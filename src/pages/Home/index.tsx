@@ -1,4 +1,3 @@
-/* eslint-disable react/display-name */
 import React, { useState } from 'react';
 import DataTable from 'react-data-table-component';
 import styled from 'styled-components';
@@ -8,15 +7,15 @@ import Loading from '../../components/elements/Loading';
 import Form from '../../components/Form';
 // import { columns } from './columns';
 
-interface ScoreProps {
-  isPass?: boolean;
-}
+// interface ScoreProps {
+//   isPass?: boolean;
+// }
 
-const Score = styled.span<ScoreProps>`
-  padding: 0.15rem 0.75rem;
-  font-weight: ${(props) => props.isPass && 600};
-  color: ${(props) => props.isPass && 'green'};
-`;
+// const Score = styled.span<ScoreProps>`
+//   padding: 0.15rem 0.75rem;
+//   font-weight: ${(props) => props.isPass && 600};
+//   color: ${(props) => props.isPass && 'green'};
+// `;
 
 const Wrapper = styled.section`
   display: grid;
@@ -59,7 +58,7 @@ const Home: React.FC = (): React.ReactElement => {
       selector: 'score',
       sortable: true,
       width: '5rem',
-      format: (cell: any) => <Score isPass={cell.score >= 450}>{cell.score}</Score>,
+      // format: (cell: any) => <Score isPass={cell.score >= 450}>{cell.score}</Score>,
     },
     {
       name: 'Listening',
