@@ -1,3 +1,4 @@
+/* eslint-disable react/display-name */
 import React, { useState } from 'react';
 import DataTable from 'react-data-table-component';
 import styled from 'styled-components';
@@ -5,7 +6,17 @@ import styled from 'styled-components';
 import Heading from '../../components/elements/Heading';
 import Loading from '../../components/elements/Loading';
 import Form from '../../components/Form';
-import { columns } from './columns';
+// import { columns } from './columns';
+
+interface ScoreProps {
+  isPass?: boolean;
+}
+
+const Score = styled.span<ScoreProps>`
+  padding: 0.15rem 0.75rem;
+  font-weight: ${(props) => props.isPass && 600};
+  color: ${(props) => props.isPass && 'green'};
+`;
 
 const Wrapper = styled.section`
   display: grid;
@@ -36,6 +47,60 @@ const Home: React.FC = (): React.ReactElement => {
   const [nim, setNim] = useState<string>('');
   const [success, setSuccess] = useState<string>('');
   const [loading, setLoading] = useState<boolean>(false);
+
+  const columns = [
+    {
+      name: 'No Ujian',
+      selector: 'no_tes',
+      sortable: true,
+    },
+    {
+      name: 'Score',
+      selector: 'score',
+      sortable: true,
+      width: '5rem',
+      format: (cell: any) => <Score isPass={cell.score >= 450}>{cell.score}</Score>,
+    },
+    {
+      name: 'Listening',
+      selector: 'listening',
+      sortable: true,
+      width: '5rem',
+    },
+    {
+      name: 'Structure',
+      selector: 'structure',
+      sortable: true,
+      width: '5rem',
+    },
+    {
+      name: 'Reading',
+      selector: 'reading',
+      sortable: true,
+      width: '5rem',
+    },
+    {
+      name: 'Nama Peserta',
+      selector: 'nama_peserta',
+      sortable: true,
+      width: '10rem',
+    },
+    {
+      name: 'Tgl. Tes',
+      selector: 'tgl_ujian',
+      sortable: true,
+    },
+    {
+      name: 'Waktu Tes',
+      selector: 'jam_ujian',
+      sortable: true,
+    },
+    {
+      name: 'Jenis Ujian',
+      selector: 'jenis_ujian',
+      sortable: true,
+    },
+  ];
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
     setNim(e.target.value);
