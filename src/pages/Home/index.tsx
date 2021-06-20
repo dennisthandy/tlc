@@ -1,10 +1,11 @@
-import React from 'react';
+/* eslint-disable no-unused-vars */
+import React, { useState } from 'react';
 // import DataTable from 'react-data-table-component';
 import styled from 'styled-components';
 
 import Heading from '../../components/elements/Heading';
 // import Loading from '../../components/elements/Loading';
-// import Form from '../../components/Form';
+import Form from '../../components/Form';
 // import { columns } from './columns';
 
 const Wrapper = styled.section`
@@ -32,36 +33,36 @@ const HeadingWrapper = styled.div`
 // `;
 
 const Home: React.FC = (): React.ReactElement => {
-  // const [data, setData] = useState<null | []>(null);
-  // const [nim, setNim] = useState<string>('');
-  // const [success, setSuccess] = useState<string>('');
-  // const [loading, setLoading] = useState<boolean>(false);
+  const [data, setData] = useState<null | []>(null);
+  const [nim, setNim] = useState<string>('');
+  const [success, setSuccess] = useState<string>('');
+  const [loading, setLoading] = useState<boolean>(false);
 
-  // const handleChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
-  //   setNim(e.target.value);
-  // };
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
+    setNim(e.target.value);
+  };
 
-  // const handleSubmit = async (e: React.FormEvent<HTMLFormElement>): Promise<void> => {
-  //   e.preventDefault();
-  //   setLoading(true);
-  //   let res: any = await fetch('/ss', {
-  //     method: 'POST',
-  //     headers: {
-  //       'Content-Type': 'application/x-www-form-urlencoded',
-  //     },
-  //     body: `idpeserta=${nim}`,
-  //   });
-  //   res = await res.json();
-  //   setData(res.datax);
-  //   setSuccess(res.success);
-  //   setLoading(false);
-  // };
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>): Promise<void> => {
+    e.preventDefault();
+    setLoading(true);
+    let res: any = await fetch('/ss', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      body: `idpeserta=${nim}`,
+    });
+    res = await res.json();
+    setData(res.datax);
+    setSuccess(res.success);
+    setLoading(false);
+  };
 
-  // const handleReset = (): void => {
-  //   setData(null);
-  //   setNim('');
-  //   setSuccess('');
-  // };
+  const handleReset = (): void => {
+    setData(null);
+    setNim('');
+    setSuccess('');
+  };
 
   return (
     <Wrapper>
@@ -75,14 +76,14 @@ const Home: React.FC = (): React.ReactElement => {
       </HeadingWrapper>
       {/* {loading && <Loading text="Harap tunggu, Sedang memuat data..." />} */}
 
-      {/* {!loading && (
+      {!loading && (
         <Form
           handleChange={handleChange}
           handleSubmit={handleSubmit}
           handleReset={handleReset}
           value={nim}
         />
-      )} */}
+      )}
 
       {/* {!loading && !data && !success && (
         <Decoration src="/ilustration.svg" alt="Decoration" />
