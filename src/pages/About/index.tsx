@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import Button from '../../elements/Button';
-import Heading from '../../elements/Heading';
-import Link from '../../elements/Link';
+import Button from '../../components/elements/Button';
+import Heading from '../../components/elements/Heading';
+import Link from '../../components/elements/Link';
 
 interface Props {
   handleCloseAbout: () => void;

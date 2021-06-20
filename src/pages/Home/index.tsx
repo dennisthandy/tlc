@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import DataTable from 'react-data-table-component';
 import styled from 'styled-components';
 
-import Heading from '../../elements/Heading';
-import Loading from '../../elements/Loading/indext';
-import Form from '../../Form';
+import Heading from '../../components/elements/Heading';
+import Loading from '../../components/elements/Loading/indext';
+import Form from '../../components/Form';
 import { columns } from './columns';
 
 const Wrapper = styled.section`
