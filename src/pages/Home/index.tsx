@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-// import DataTable from 'react-data-table-component';
+import DataTable from 'react-data-table-component';
 import styled from 'styled-components';
 
 import Heading from '../../components/elements/Heading';
 import Loading from '../../components/elements/Loading';
 import Form from '../../components/Form';
-// import { columns } from './columns';
+import { columns } from './columns';
 
 const Wrapper = styled.section`
   display: grid;
@@ -97,7 +97,7 @@ const Home: React.FC = (): React.ReactElement => {
         </>
       )}
 
-      {/*{data && !loading && (
+      {data && !loading && (
         <>
           <Heading h4 brown text>
             Ditemukan{' '}
@@ -114,7 +114,7 @@ const Home: React.FC = (): React.ReactElement => {
             style={{ borderRadius: '.25rem' }}
           />
         </>
-      )} */}
+      )}
     </Wrapper>
   );
 };

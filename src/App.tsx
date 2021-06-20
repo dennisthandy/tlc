@@ -22,7 +22,7 @@ function App() {
 
   return (
     <Wrapper>
-      <Container>
+      <Container center>
         <Header />
         {!openAbout && <Home />}
         {openAbout && <About handleCloseAbout={handleAboutPage} />}
