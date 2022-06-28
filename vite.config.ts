@@ -43,6 +43,12 @@ export default defineConfig({
         secure: false,
         ws: true,
       },
+      '/dd': {
+        target: 'http://pusatbahasa.trunojoyo.ac.id',
+        changeOrigin: true,
+        secure: false,
+        ws: true,
+      },
     },
   },
 });

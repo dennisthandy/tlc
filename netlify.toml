@@ -1,3 +1,5 @@
 [[redirects]]
   from = "/ss"
-  to = "http://pusatbahasa.trunojoyo.ac.id"
+  to = "/dd"
+  status = 200
+  force = true
