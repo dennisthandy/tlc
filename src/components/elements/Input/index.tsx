@@ -5,13 +5,13 @@ export default styled.input`
   border-radius: ${({ theme }) => theme.borderRadius};
   background-color: ${({ theme }) => theme.colors.yellow};
   border: 1.5px solid ${({ theme }) => theme.colors.white};
-  color: ${({ theme }) => theme.colors.white};
   width: 100%;
   font-size: 16px;
 
   &:focus {
     outline: none;
     border: 1.5px solid ${({ theme }) => theme.colors.red};
+    background-color: white;
   }
 
   &:focus + label {

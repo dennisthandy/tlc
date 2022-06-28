@@ -57,8 +57,10 @@ const Form: React.FC<Props> = ({
         <Label htmlFor="nim">NIM atau NRP</Label>
       </FormGroup>
       <FormGroup column>
-        <Button type="submit">Submit</Button>
-        <Button disabled={!value} onClick={handleReset} red type="reset">
+        <Button type="submit" bgColor="green">
+          Submit
+        </Button>
+        <Button disabled={!value} onClick={handleReset} red type="reset" solid>
           Reset
         </Button>
       </FormGroup>

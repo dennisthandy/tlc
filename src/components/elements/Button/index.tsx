@@ -5,17 +5,12 @@ interface Props {
   full?: boolean;
   red?: boolean;
   text?: boolean;
+  bgColor?: string;
 }
 
 const solidStyle = css`
-  background-color: ${({ theme }) => theme.colors.yellow};
+  background-color: ${({ theme }) => theme.colors.red};
   border: 1.5px solid ${({ theme }) => theme.colors.yellow};
-
-  &:hover {
-    border-color: ${({ theme }) => theme.colors.white};
-    background-color: transparent;
-    color: ${({ theme }) => theme.colors.white};
-  }
 `;
 
 const textStyle = css`
@@ -28,12 +23,6 @@ const textStyle = css`
   width: auto;
   letter-spacing: normal;
 
-  &:hover {
-    background-color: transparent;
-    border: none;
-    color: ${({ theme }) => theme.colors.red};
-  }
-
   &:visited {
     color: ${({ theme }) => theme.colors.red};
   }
@@ -45,9 +34,8 @@ const textStyle = css`
 
 export default styled.button<Props>`
   padding: 0.75rem 2rem;
-  background-color: transparent;
-  border: 1.5px solid
-    ${(props) => (props.red ? props.theme.colors.red : props.theme.colors.white)};
+  background-color: ${(props) => props.bgColor};
+  border: none;
   border-radius: ${({ theme }) => theme.borderRadius};
   color: ${({ theme }) => theme.colors.white};
   cursor: pointer;
@@ -55,12 +43,6 @@ export default styled.button<Props>`
   width: ${(props) => props.full && '100%'};
   font-size: 14px;
   letter-spacing: 0.15rem;
-
-  &:hover {
-    background-color: ${(props) =>
-      props.red ? props.theme.colors.red : props.theme.colors.white};
-    color: ${({ theme }) => theme.colors.yellow};
-  }
 
   &:disabled {
     pointer-events: none;

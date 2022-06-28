@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import Button from '../elements/Button';
 import Heading from '../elements/Heading';
 import Link from '../elements/Link';
 
@@ -28,7 +27,7 @@ const Item = styled.li`
   list-style: none;
 `;
 
-const Footer: React.FC<Props> = ({ handleOpenAbout }): React.ReactElement => {
+const Footer: React.FC<Props> = (): React.ReactElement => {
   return (
     <Wrapper>
       <Part>
@@ -40,7 +39,7 @@ const Footer: React.FC<Props> = ({ handleOpenAbout }): React.ReactElement => {
             </Heading>{' '}
           </Link>
         </Item>
-        <Item>
+        {/* <Item>
           <Button text onClick={handleOpenAbout}>
             About
           </Button>
@@ -49,7 +48,7 @@ const Footer: React.FC<Props> = ({ handleOpenAbout }): React.ReactElement => {
           <Button text onClick={handleOpenAbout}>
             Home
           </Button>
-        </Item>
+        </Item> */}
       </Part>
       <Heading white center h6>
         Made with ❤️ by{' '}
