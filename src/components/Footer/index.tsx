@@ -34,7 +34,7 @@ const Footer: React.FC<Props> = (): React.ReactElement => {
         <Item>
           <Link href="https://iradesign.io">
             Illustrations by{' '}
-            <Heading h5 inline red as="span">
+            <Heading h5 inline as="span">
               IRA Design
             </Heading>{' '}
           </Link>
@@ -50,9 +50,9 @@ const Footer: React.FC<Props> = (): React.ReactElement => {
           </Button>
         </Item> */}
       </Part>
-      <Heading white center h6>
+      <Heading center h6>
         Made with ❤️ by{' '}
-        <Heading red inline h6 as="span">
+        <Heading inline h6 as="span">
           Dennis Thandy{' '}
         </Heading>
       </Heading>
