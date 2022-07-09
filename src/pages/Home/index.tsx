@@ -1,39 +1,15 @@
 /* eslint-disable react/display-name */
 import React, { useState } from 'react';
-import DataTable from 'react-data-table-component';
-import styled from 'styled-components';
 
 import Heading from '../../components/elements/Heading';
 import Loading from '../../components/elements/Loading';
 import Form from '../../components/Form';
-import { columns } from './columns';
-
-const Wrapper = styled.section`
-  display: grid;
-  padding: 1rem 1rem 2rem 1rem;
-  gap: 2rem;
-
-  @media screen and (min-width: ${(props) => props.theme.breakpoints.sm}) {
-    gap: 1rem;
-  }
-`;
-
-const HeadingWrapper = styled.div`
-  display: grid;
-`;
-
-const Decoration = styled.img`
-  width: 18rem;
-  height: auto;
-  margin: 0 auto;
-
-  @media screen and (min-width: ${(props) => props.theme.breakpoints.sm}) {
-    width: 20rem;
-  }
-`;
+import ScoreCard from '../../components/ScoreCard';
+import { RecordTest } from '../../utils/types';
+import { Decoration, HeadingWrapper, Scores, Wrapper } from './elements';
 
 const Home: React.FC = (): React.ReactElement => {
-  const [data, setData] = useState<null | []>(null);
+  const [data, setData] = useState<null | RecordTest[]>(null);
   const [nim, setNim] = useState<string>('');
   const [success, setSuccess] = useState<string>('');
   const [loading, setLoading] = useState<boolean>(false);
@@ -67,11 +43,8 @@ const Home: React.FC = (): React.ReactElement => {
   return (
     <Wrapper>
       <HeadingWrapper>
-        <Heading center h1 as="h1">
-          Cek Nilai
-        </Heading>
-        <Heading h1 center italic white>
-          Test of English for Academic Purposes
+        <Heading h3 center>
+          Yuk cek nilai kamu 🧐
         </Heading>
       </HeadingWrapper>
       {loading && <Loading text="Harap tunggu, Sedang memuat data..." />}
@@ -92,7 +65,7 @@ const Home: React.FC = (): React.ReactElement => {
       {success === 'no' && !data && (
         <>
           <Decoration src="/bg-16.svg" alt="Library" />
-          <Heading brown h4 center>
+          <Heading h4 center>
             Data tidak ditemukan...
           </Heading>
         </>
@@ -100,14 +73,18 @@ const Home: React.FC = (): React.ReactElement => {
 
       {data && !loading && (
         <>
-          <Heading h4 brown text>
+          <Heading h4 text>
             Ditemukan{' '}
             <Heading inline h4 as="span" text>
               {data.length}{' '}
             </Heading>
             kali riwayat tes.
           </Heading>
-          <DataTable columns={columns} data={data} noHeader striped />
+          <Scores>
+            {data.map((item) => (
+              <ScoreCard {...item} key={item.no_tes} />
+            ))}
+          </Scores>
         </>
       )}
     </Wrapper>

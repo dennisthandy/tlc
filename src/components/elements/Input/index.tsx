@@ -1,17 +1,17 @@
 import styled from 'styled-components';
 
 export default styled.input`
-  padding: 1rem 1rem;
-  border-radius: ${({ theme }) => theme.borderRadius};
-  background-color: ${({ theme }) => theme.colors.yellow};
-  border: 1.5px solid ${({ theme }) => theme.colors.white};
+  padding: 0.75em 1em;
+  border: none;
+  background-color: ${({ theme }) => theme.colors.bg.secondary};
+  border-bottom: 0.5px solid ${({ theme }) => theme.colors.separator.text};
   width: 100%;
-  font-size: 16px;
+  font-size: 17px;
+  color: ${({ theme }) => theme.colors.label.primary};
+  caret-color: #446bf2;
 
   &:focus {
     outline: none;
-    border: 1.5px solid ${({ theme }) => theme.colors.red};
-    background-color: white;
   }
 
   &:focus + label {

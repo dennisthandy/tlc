@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 interface Props {
   h1?: boolean;
@@ -7,13 +7,11 @@ interface Props {
   h4?: boolean;
   h5?: boolean;
   h6?: boolean;
-  white?: boolean;
-  red?: boolean;
-  brown?: boolean;
   text?: boolean;
   center?: boolean;
   italic?: boolean;
   inline?: boolean;
+  readonly banner?: boolean;
 }
 
 export default styled.p<Props>`
@@ -33,13 +31,35 @@ export default styled.p<Props>`
       : props.h5
       ? '12px'
       : '10px'};
-  color: ${(props) =>
-    props.white
-      ? props.theme.colors.white
-      : props.red
-      ? props.theme.colors.red
-      : props.brown
-      ? props.theme.colors.brown
-      : props.theme.colors.black};
+  color: ${({ theme }) => theme.colors.label.primary};
   display: ${(props) => (props.inline ? 'inline' : 'block')};
+  ${({ banner }) =>
+    banner &&
+    css`
+      margin: 0;
+      padding: 0;
+      background: ${({ theme: { colors } }) => colors.red};
+      color: white;
+      padding: 0.5em 0;
+      position: absolute;
+      top: 0;
+      right: 0;
+      transform: translateX(30%) translateY(0%) rotate(45deg);
+      transform-origin: top left;
+      font-size: 12px;
+
+      &::before,
+      &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        margin: 0 -1px; /* tweak */
+        width: 100%;
+        height: 100%;
+        background: ${({ theme: { colors } }) => colors.red};
+      }
+      &::before {
+        right: 100%;
+      }
+    `}
 `;

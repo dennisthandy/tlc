@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
 export default styled.img`
-  width: 4rem;
+  max-width: 100%;
   height: 4rem;
 `;
